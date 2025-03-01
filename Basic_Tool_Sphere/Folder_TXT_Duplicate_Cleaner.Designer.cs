@@ -89,7 +89,7 @@
             listBoxProcessDetails.FormattingEnabled = true;
             listBoxProcessDetails.HorizontalScrollbar = true;
             listBoxProcessDetails.ItemHeight = 18;
-            listBoxProcessDetails.Location = new Point(40, 301);
+            listBoxProcessDetails.Location = new Point(39, 301);
             listBoxProcessDetails.Name = "listBoxProcessDetails";
             listBoxProcessDetails.Size = new Size(805, 346);
             listBoxProcessDetails.TabIndex = 5;
@@ -111,7 +111,7 @@
             listBoxTXTFiles.FormattingEnabled = true;
             listBoxTXTFiles.HorizontalScrollbar = true;
             listBoxTXTFiles.ItemHeight = 18;
-            listBoxTXTFiles.Location = new Point(454, 66);
+            listBoxTXTFiles.Location = new Point(453, 66);
             listBoxTXTFiles.Name = "listBoxTXTFiles";
             listBoxTXTFiles.Size = new Size(391, 220);
             listBoxTXTFiles.TabIndex = 5;
