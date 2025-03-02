@@ -15,8 +15,8 @@
 
 ## 📸 Interface Preview
 
-![Merge TXT Documents](1.png)
-![Merge TXT Documents](2.png)
+![Merge TXT Documents](1.PNG)
+![Merge TXT Documents](2.PNG)
 ---
 
 ## 🚀 Getting Started
