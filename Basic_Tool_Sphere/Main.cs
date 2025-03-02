@@ -1,5 +1,5 @@
-using New_Software;
 using Osint_Tool;
+using Basic_Tool_Sphere;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -23,6 +23,7 @@ namespace New_Software
         private void hideSubMenu()
         {
             SidebarChildFolderOperations.Visible = false;
+            SidebarChildDecode.Visible = false;
         }
         private void showSubMenu(Panel subMenu)
         {
@@ -68,7 +69,7 @@ namespace New_Software
 
         private void btnSidebarTXTMerge_Click(object sender, EventArgs e)
         {
-            openChildForm(new Folder_Merge_TXT_Documents());
+            openChildForm(new Folder_Merge_TXT_Files());
             hideSubMenu();
         }
         private void btnSidebarTXTDuplicate_Click(object sender, EventArgs e)
@@ -80,6 +81,23 @@ namespace New_Software
         private void btnSidebarExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnSidebarSplitLargeTXT_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Folder_Split_TXT_Files());
+            hideSubMenu();
+        }
+
+        private void btnSidebarDecodeBase64_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Decode_Base64());
+            hideSubMenu();
+        }
+
+        private void btnSidebarDecryptOperations_Click(object sender, EventArgs e)
+        {
+            showSubMenu(SidebarChildDecode);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Osint_Tool
             string directoryPath = textBoxPath.Text;
             if (!Directory.Exists(directoryPath))
             {
-                MessageBox.Show("⚠️ Please select a valid directory!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a valid directory!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace Osint_Tool
 {
-    public partial class Folder_Merge_TXT_Documents : Form
+    public partial class Folder_Merge_TXT_Files : Form
     {
-        public Folder_Merge_TXT_Documents()
+        public Folder_Merge_TXT_Files()
         {
             InitializeComponent();
         }
-
         private void btnChoosePath_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
@@ -26,6 +25,7 @@ namespace Osint_Tool
                     textBoxPath.Text = dialog.SelectedPath;
                     listBoxTXTFiles.Items.Clear();
                     listBoxProcessDetails.Items.Clear();
+
                     string directoryPath = textBoxPath.Text;
                     if (Directory.Exists(directoryPath))
                     {
@@ -38,7 +38,7 @@ namespace Osint_Tool
                     }
                     else
                     {
-                        MessageBox.Show("⚠️ Please select a valid directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please select a valid directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -50,21 +50,21 @@ namespace Osint_Tool
             string directoryPath = textBoxPath.Text;
             if (!Directory.Exists(directoryPath))
             {
-                MessageBox.Show("⚠️ Please select a valid directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a valid directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             string outputFileName = textBox2.Text.Trim();
             if (string.IsNullOrEmpty(outputFileName))
             {
-                MessageBox.Show("⚠️ Please enter a file name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a file name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             int maxFileSizeMB;
             if (!int.TryParse(numericFileMaxSize.Value.ToString(), out maxFileSizeMB) || maxFileSizeMB <= 0)
             {
-                MessageBox.Show("⚠️ Please enter a valid file size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid file size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -74,7 +74,7 @@ namespace Osint_Tool
 
             await Task.Run(() => MergeFiles(directoryPath, outputDirectory, outputFileName, maxFileSize));
 
-            MessageBox.Show("✅ Merging process completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Merging process completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnChoosePath.Enabled = true;
             btnStartMergeProcess.Enabled = true;
         }

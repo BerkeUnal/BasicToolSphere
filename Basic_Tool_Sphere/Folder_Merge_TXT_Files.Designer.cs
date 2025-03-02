@@ -1,6 +1,6 @@
 ﻿namespace Osint_Tool
 {
-    partial class Folder_Merge_TXT_Documents
+    partial class Folder_Merge_TXT_Files
     {
         /// <summary>
         /// Required designer variable.
